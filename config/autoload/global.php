@@ -10,7 +10,5 @@
  * control, so do not include passwords or other sensitive information in this
  * file.
  */
-
 return array(
-    // ...
 );

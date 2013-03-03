@@ -1,1 +1,98 @@
-I'm the index
+<?php
+/**
+	ToDo:
+		Image block ViewHelper
+		RareBird Toolbar ViewHelper
+ */
+
+$title = 'Newsletters';
+
+// todo Prepend a department to this title
+$this->headTitle('Newsletters');
+
+$publishedNewsletters = $this->publishedNewsletters;
+$archivedNewsletters = array(); //this array will hold archived newsletters
+
+$maxArchivedNewsletters = $this->maxArchivedNewsletters;
+$maxActiveNewsletters   = $this->maxActiveNewsletters;
+?>
+<div id="centercol_text">
+			<!-- this is the image block -->
+							<div class="random_images"><img src="../images/rand_imgs/rand3.jpg" alt="Volunteer Opportunities" width="145px" height="145px"><img src="../images/rand_imgs/rand5.jpg" alt="Volunteer Opportunities" width="145px" height="145px"><img src="../images/rand_imgs/rand13.jpg" alt="Volunteer Opportunities" width="145px" height="145px"><img src="../images/rand_imgs/rand6.jpg" alt="Volunteer Opportunities" width="145px" height="145px"></div>
+				<!-- the image block ends here -->
+					<br>
+					<div style="overflow: hidden;">
+					  <h1><?php echo $title; ?></h1>
+					  
+				  <?php 
+				    /**
+					 * ACTIVE NEWSLETTERS
+				     */
+				  	$i = 1;
+				  	foreach ($publishedNewsletters as $publishedNewsletter) :
+				  	
+				  		if ($i > $maxActiveNewsletters) {
+							$archivedNewsletters[] = $publishedNewsletter;
+							continue;
+						} else {
+							$i++;
+						}
+				  ?>
+					  <div class="pubs_short float_left"> 
+						<p>
+							<?php echo $publishedNewsletter->getPublicationDateText(); ?> - <?php echo $publishedNewsletter->title; ?>
+						</p>
+
+		                <span class="news_photo">
+		                	<a target="_blank" href="<?php echo $this->url('document', array('action' => 'document', 'id' => $publishedNewsletter->id)); ?>">
+		                    	<img src="<?php echo $this->url('image', array('action' => 'image', 'id' => $publishedNewsletter->id)); ?>" alt="Community Programs Center <?php echo $publishedNewsletter->getPublicationDateText(); ?> newsletter" width="150px" height="192px" border="1">
+		                    </a>
+		                </span> <!--End span news_photo -->
+
+	                	<p>
+	                        <span>
+	                            <a target="_blank" href="<?php echo $this->url('document', array('action' => 'document', 'id' => $publishedNewsletter->id)); ?>">Download <?php echo $publishedNewsletter->document_type; ?></a>
+	                        	<br>
+	                            <?php echo $publishedNewsletter->page_count; ?> pages | <?php echo $publishedNewsletter->filesize; ?> 
+	                        </span> 
+	                	</p> <!-- End span pubs_contents -->
+	        		 </div> <!--End div pubs_short -->
+				<?php 
+					endforeach;
+				?>
+        		
+        		<?php 
+        			/**
+					 * ARCHIVE
+        			 */
+        			$countArchived = count($archivedNewsletters);
+        			if ($countArchived > 0) :
+        		?>
+	              <div id="archive">
+	              		<br>
+	              		<h2>Archive</h2>	
+		              		<p>
+		              		<?php 
+		              			$i = 1;
+		              			foreach ($archivedNewsletters as $archivedNewsletter) :
+		              				if ($i >= $maxArchivedNewsletters) {
+										return;
+									} else {
+										$i++;
+									}
+									
+		              		?>
+		              			<a target="_blank" href="<?php echo $this->url('document', array('action' => 'document', 'id' => $publishedNewsletter->id)); ?>"><?php echo $archivedNewsletter->getPublicationDateText(); ?></a> - <?php echo $archivedNewsletter->title; ?>
+		              			<br>	  
+		              		<?php 
+		              			endforeach;
+		              		?>            		
+							</p>
+
+	              </div>
+	            <?php 
+	            	endif;
+	            ?>
+
+			</div>
+		</div>

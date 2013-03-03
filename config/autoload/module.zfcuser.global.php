@@ -71,7 +71,7 @@ $settings = array(
      * Default value: array containing 'email'
      * Accepted values: array containing one or more of: email, username
      */
-    //'auth_identity_fields' => array( 'email' ),
+    'auth_identity_fields' => array( 'username' ),
 
     /**
      * Login form timeout
@@ -134,7 +134,7 @@ $settings = array(
      *
      * Accepted values: boolean true or false
      */
-    //'use_redirect_parameter_if_present' => true,
+    'use_redirect_parameter_if_present' => false,
 
     /**
 	 * Sets the view template for the user login widget
@@ -153,7 +153,7 @@ $settings = array(
      * Accepted values: A valid route name within your application
      *
      */
-    //'login_redirect_route' => 'zfcuser',
+    'login_redirect_route' => 'newsiesadmin',
 
     /**
      * Logout Redirect Route
@@ -163,7 +163,7 @@ $settings = array(
      * Default value: 'zfcuser/login'
      * Accepted values: A valid route name within your application
      */
-    //'logout_redirect_route' => 'zfcuser/login',
+    'logout_redirect_route' => 'newsletters',
 
     /**
      * Password Security

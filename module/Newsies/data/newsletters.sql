@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2013 at 07:11 PM
+-- Generation Time: Mar 02, 2013 at 10:30 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.3.13
 
@@ -28,11 +28,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `newsletters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` int(11) NOT NULL,
-  `publication_date` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `publication_date` varchar(255) NOT NULL,
   `status` enum('archived','published','review','draft') NOT NULL DEFAULT 'draft',
-  `image` int(11) NOT NULL,
-  `document` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `document` varchar(255) NOT NULL,
+  `document_type` varchar(255) NOT NULL,
+  `page_count` int(4) NOT NULL,
+  `filesize` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

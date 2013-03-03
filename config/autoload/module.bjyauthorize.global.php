@@ -79,6 +79,8 @@ return array(
                 array('controller' => 'zfcuser', 'roles' => array()),
                 // Below is the default index action used by the [ZendSkeletonApplication](https://github.com/zendframework/ZendSkeletonApplication)
                 array('controller' => 'Application\Controller\Index', 'roles' => array('guest', 'user')),
+            	// Newsletter Controller
+            	array('controller' => 'Newsies\Controller\Newsletter', 'roles' => array('guest', 'user')),
             	
             ),
 
@@ -92,6 +94,10 @@ return array(
                 array('route' => 'zfcuser/register', 'roles' => array('guest')),
                 // Below is the default index action used by the [ZendSkeletonApplication](https://github.com/zendframework/ZendSkeletonApplication)
                 array('route' => 'home', 'roles' => array('guest', 'user')),
+            	// Newsletter Controller Routes
+            	array('route' => 'newsletter', 'roles' => array('guest', 'user')),
+            	array('route' => 'document', 'roles' => array('guest', 'user')),
+            	array('route' => 'image', 'roles' => array('guest', 'user')),
             ),
         ),
     	'zenddevelopertools' => array(

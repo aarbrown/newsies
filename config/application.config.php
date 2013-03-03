@@ -10,8 +10,11 @@ return array(
         'Application',
         'ZendDeveloperTools',
         'BjyProfiler',
+    	'ZfcBase',
+    	'ZfcUser',
+    	'BjyAuthorize',
+    	'ZfcAdmin',
         'Newsies',
-        'Admin'
         ),
     'module_listener_options' => array(
         'module_paths' => array(
