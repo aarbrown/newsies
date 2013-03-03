@@ -17,9 +17,9 @@ class Module
 		$application = $e->getTarget();
 		$eventManager = $application->getEventManager();
 		
-		$strategy = new RedirectionStrategy();
+		//$strategy = new RedirectionStrategy();
 		
-		$eventManager->attach($strategy);
+		//$eventManager->attach($strategy);
 	}
 	
     public function getConfig()

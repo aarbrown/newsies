@@ -81,6 +81,8 @@ return array(
                 array('controller' => 'Application\Controller\Index', 'roles' => array('guest', 'user')),
             	// Newsletter Controller
             	array('controller' => 'Newsies\Controller\Newsletter', 'roles' => array('guest', 'user')),
+            	// Admin Controller
+             	array('controller' => 'Newsies\Controller\Admin', 'roles' => array('user')),
             	
             ),
 
@@ -98,6 +100,8 @@ return array(
             	array('route' => 'newsletter', 'roles' => array('guest', 'user')),
             	array('route' => 'document', 'roles' => array('guest', 'user')),
             	array('route' => 'image', 'roles' => array('guest', 'user')),
+            	// Admin Controller Routes
+            	array('route' => 'zfcadmin/newsies', 'roles' => array('user')),
             ),
         ),
     	'zenddevelopertools' => array(

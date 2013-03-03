@@ -153,7 +153,7 @@ $settings = array(
      * Accepted values: A valid route name within your application
      *
      */
-    'login_redirect_route' => 'newsiesadmin',
+    //'login_redirect_route' => 'newsiesadmin',
 
     /**
      * Logout Redirect Route
@@ -163,7 +163,7 @@ $settings = array(
      * Default value: 'zfcuser/login'
      * Accepted values: A valid route name within your application
      */
-    'logout_redirect_route' => 'newsletters',
+    //'logout_redirect_route' => 'newsletters',
 
     /**
      * Password Security

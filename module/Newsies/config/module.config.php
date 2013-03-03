@@ -3,11 +3,12 @@ return array(
 	'controllers' => array(
 		'invokables' => array(
 			'Newsies\Controller\Newsletter' => 'Newsies\Controller\NewsletterController',
+			'Newsies\Controller\Admin' => 'Newsies\Controller\AdminController',
 		),
 	),
 	'router' => array(
 		'routes' => array(
-			// Override the ZendSkeletonApp's default routes
+			// Override the ZendSkeletonApp's default route
 			'home' => array(
 				'type' => 'Zend\Mvc\Router\Http\Literal',
 				'options' => array(
@@ -18,17 +19,6 @@ return array(
 					),
 				),
 			),
-			// Override the ZendSkeletonApp's default routes
-// 			'application' => array(
-// 				'type'    => 'Zend\Mvc\Router\Http\Literal',
-// 				'options' => array(
-// 					'route'    => '/',
-// 					'defaults' => array(
-// 						'controller' => 'Newsies\Controller\Newsletter',
-// 						'action'     => 'index',
-// 					),
-// 				),
-// 			),
 			// newsletter controller
 			'newsletter' => array(
 				'type' => 'Zend\Mvc\Router\Http\Literal',
@@ -68,7 +58,7 @@ return array(
 			),
 			'zfcadmin' => array(
 					'child_routes' => array(
-							'newsiesadmin' => array(
+							'newsies' => array(
 									'type' => 'Literal',
 									'options' => array(
 											'route' => '/admin',
