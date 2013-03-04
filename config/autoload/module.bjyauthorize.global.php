@@ -101,7 +101,7 @@ return array(
             	array('route' => 'document', 'roles' => array('guest', 'user')),
             	array('route' => 'image', 'roles' => array('guest', 'user')),
             	// Admin Controller Routes
-            	array('route' => 'zfcadmin/newsies', 'roles' => array('user')),
+            	array('route' => 'admin', 'roles' => array('user')),
             ),
         ),
     	'zenddevelopertools' => array(
