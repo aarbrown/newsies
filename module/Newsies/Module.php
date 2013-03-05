@@ -18,24 +18,9 @@ class Module
 		$application = $e->getTarget();
 		$eventManager = $application->getEventManager();
 		
-		$strategy = new RedirectionStrategy();
+		//$strategy = new RedirectionStrategy();
 		
-		$eventManager->attach($strategy);
-		
-		// selects the correct layout for each controller
-		// see http://www.ivangospodinow.com/?p=71
-		$e->getApplication()->getEventManager()->getSharedManager()
-		->attach('Zend\Mvc\Controller\AbstractActionController', 'dispatch', function($e) {
-			$controller = $e->getTarget();
-			$controllerClass = get_class($controller);
-			$ar = explode('\\',$controllerClass);
-			$controllerStr = str_replace('Controller','',$ar[count($ar) -1]);
-			$config = $e->getApplication()->getServiceManager()->get('config');
-			
-			if (isset($config['controller_layouts'][$controllerStr])) {
-				$controller->layout($config['controller_layouts'][$controllerStr]);
-			}
-		}, 100);
+		//$eventManager->attach($strategy);
 	}
 	
     public function getConfig()

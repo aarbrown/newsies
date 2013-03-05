@@ -134,7 +134,7 @@ $settings = array(
      *
      * Accepted values: boolean true or false
      */
-    'use_redirect_parameter_if_present' => false,
+    //'use_redirect_parameter_if_present' => false,
 
     /**
 	 * Sets the view template for the user login widget
@@ -153,7 +153,7 @@ $settings = array(
      * Accepted values: A valid route name within your application
      *
      */
-    'login_redirect_route' => 'admin',
+    'login_redirect_route' => 'zfcadmin',
 
     /**
      * Logout Redirect Route

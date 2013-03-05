@@ -19,18 +19,6 @@ return array(
 					),
 				),
 			),
-			// Override the ZendSkeletonApp's default routes
-// 			'application' => array(
-// 				'type'    => 'Zend\Mvc\Router\Http\Literal',
-// 				'options' => array(
-// 					'route'    => '/',
-// 					'defaults' => array(
-// 						'controller' => 'Newsies\Controller\Newsletter',
-// 						'action'     => 'index',
-// 					),
-// 				),
-// 			),
-			// newsletter controller
 			'newsletter' => array(
 				'type' => 'Zend\Mvc\Router\Http\Literal',
 				'options' => array(
@@ -67,30 +55,15 @@ return array(
 							),
 					),
 			),
-			'admin' => array(
-				'type' => 'Zend\Mvc\Router\Http\Segment',
-				'options' => array(
-					'route' => '/admin[/[:action[/[:id]]]]',
-					'defaults' => array(
-						'controller' => 'Newsies\Controller\Admin',
-						'action'	 => 'index',
-					),
-				),
-			),
 		),
 	),
 	// add separate layouts for public controller and admin controller
 	'controller_layouts' => array(
 		'Newsletter' => 'layout/layout',
-		'Admin' => 'layout/admin',
 	),
 	'view_manager' => array(
 		'template_path_stack' => array(
 			'newsies' => __DIR__ . '/../view',
-		),
-		'template_map' => array(
-			'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
-			'layout/admin' => __DIR__ . '/../view/layout/admin.phtml',
 		),
 	),
 );

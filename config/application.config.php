@@ -13,6 +13,7 @@ return array(
     	'ZfcBase',
     	'ZfcUser',
     	'BjyAuthorize',
+    	'ZfcAdmin',
         'Newsies',
         ),
     'module_listener_options' => array(

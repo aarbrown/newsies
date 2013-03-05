@@ -82,7 +82,7 @@ return array(
             	// Newsletter Controller
             	array('controller' => 'Newsies\Controller\Newsletter', 'roles' => array('guest', 'user')),
             	// Admin Controller
-             	array('controller' => 'Newsies\Controller\Admin', 'roles' => array('user')),
+             	array('controller' => 'ZfcAdmin\Controller\AdminController', 'roles' => array('user')),
             	
             ),
 
@@ -90,10 +90,10 @@ return array(
              * access to all routes unless they are specified here.
              */
             'BjyAuthorize\Guard\Route' => array(
-                array('route' => 'zfcuser', 'roles' => array('user')),
+                array('route' => 'zfcuser', 'roles' => array()),
                 array('route' => 'zfcuser/logout', 'roles' => array('user')),
-                array('route' => 'zfcuser/login', 'roles' => array('guest')),
-                array('route' => 'zfcuser/register', 'roles' => array('guest')),
+                array('route' => 'zfcuser/login', 'roles' => array()),
+                array('route' => 'zfcuser/register', 'roles' => array()),
                 // Below is the default index action used by the [ZendSkeletonApplication](https://github.com/zendframework/ZendSkeletonApplication)
                 array('route' => 'home', 'roles' => array('guest', 'user')),
             	// Newsletter Controller Routes
@@ -101,7 +101,7 @@ return array(
             	array('route' => 'document', 'roles' => array('guest', 'user')),
             	array('route' => 'image', 'roles' => array('guest', 'user')),
             	// Admin Controller Routes
-            	array('route' => 'admin', 'roles' => array('user')),
+            	array('route' => 'zfcadmin', 'roles' => array('user')),
             ),
         ),
     	'zenddevelopertools' => array(
